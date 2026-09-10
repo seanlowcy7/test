@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wikipedia Title Autocomplete</title>
+    <meta
+      name="description"
+      content="A browser-based autocomplete MVP for Wikipedia page titles."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="search-panel" aria-labelledby="app-title">
+        <div class="heading-row">
+          <div>
+            <p class="eyebrow">Wikipedia titles</p>
+            <h1 id="app-title">Autocomplete search</h1>
+          </div>
+          <span class="count-pill" id="countPill">Starting</span>
+        </div>
+
+        <div class="status-row" id="status" role="status" aria-live="polite">
+          Loading titles... you can start typing now
+        </div>
+
+        <div class="combobox" role="combobox" aria-expanded="false" aria-owns="suggestions">
+          <label for="searchInput">Search by title prefix</label>
+          <input
+            id="searchInput"
+            type="search"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Start typing, for example new york"
+            aria-autocomplete="list"
+            aria-controls="suggestions"
+          >
+          <ul id="suggestions" class="suggestions" role="listbox"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
